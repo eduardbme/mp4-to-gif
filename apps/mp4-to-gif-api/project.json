@@ -1,0 +1,26 @@
+{
+  "name": "mp4-to-gif-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mp4-to-gif-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "mp4-to-gif-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mp4-to-gif-api:build:development"
+        },
+        "production": {
+          "buildTarget": "mp4-to-gif-api:build:production"
+        }
+      }
+    }
+  }
+}
