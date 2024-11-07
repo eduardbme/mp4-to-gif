@@ -1,0 +1,14 @@
+{
+  "document": {
+    "concurrency": 5,
+    "repository": {
+      "credentials": {
+        "accessKeyId": "admin",
+        "secretAccessKey": "admin-password"
+      },
+      "endpoint": "http://localhost:9000",
+      "region": "localhost",
+      "bucket": "documents"
+    }
+  }
+}

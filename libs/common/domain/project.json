@@ -1,0 +1,21 @@
+{
+  "name": "@common/domain",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/domain/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/common/domain",
+        "main": "libs/common/domain/src/index.ts",
+        "tsConfig": "libs/common/domain/tsconfig.lib.json",
+        "assets": ["libs/common/domain/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    }
+  }
+}

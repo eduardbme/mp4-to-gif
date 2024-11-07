@@ -1,0 +1,21 @@
+{
+  "name": "@mp4-to-gif-api/injector",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mp4-to-gif-api/common/injector/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/mp4-to-gif-api/common/injector",
+        "main": "libs/mp4-to-gif-api/common/injector/src/index.ts",
+        "tsConfig": "libs/mp4-to-gif-api/common/injector/tsconfig.lib.json",
+        "assets": ["libs/mp4-to-gif-api/common/injector/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    }
+  }
+}

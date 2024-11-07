@@ -1,0 +1,1 @@
+export { DocumentRepository } from './DocumentRepository';

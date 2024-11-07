@@ -1,0 +1,25 @@
+{
+  "version": "0.0.0",
+  "env": "local",
+  "httpApiServer": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "origins": ["http://localhost:4200"]
+  },
+  "redis": "localhost:6379",
+  "logger": {
+    "level": "info"
+  },
+  "document": {
+    "concurrency": 1,
+    "repository": {
+      "credentials": {
+        "accessKeyId": "",
+        "secretAccessKey": ""
+      },
+      "endpoint": "",
+      "region": "",
+      "bucket": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@mp4-to-gif-api/context",
+  "version": "0.0.1",
+  "dependencies": {
+    "rxjs": "7.8.1",
+    "uuid": "11.0.2"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "private": true
+}

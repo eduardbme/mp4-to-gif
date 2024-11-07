@@ -1,0 +1,10 @@
+{
+  "name": "@mp4-to-gif/logger",
+  "version": "0.0.1",
+  "dependencies": {
+    "pino": "9.5.0"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "private": true
+}

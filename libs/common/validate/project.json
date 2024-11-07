@@ -1,0 +1,21 @@
+{
+  "name": "validate",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/validate/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/common/validate",
+        "main": "libs/common/validate/src/index.ts",
+        "tsConfig": "libs/common/validate/tsconfig.lib.json",
+        "assets": ["libs/common/validate/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    }
+  }
+}

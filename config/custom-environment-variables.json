@@ -1,0 +1,34 @@
+{
+  "version": "VERSION",
+  "env": "ENV",
+  "httpApiServer": {
+    "host": "HTTP_API_SERVER_HOST",
+    "port": {
+      "__name": "HTTP_API_SERVER_PORT",
+      "__format": "number"
+    },
+    "origins": {
+      "__name": "HTTP_API_SERVER_ORIGINS",
+      "__format": "json"
+    }
+  },
+  "redis": "REDIS_URL",
+  "logger": {
+    "level": "LOGGER_LEVEL"
+  },
+  "document": {
+    "concurrency": {
+      "__name": "DOCUMENT_CONCURRENCY",
+      "__format": "number"
+    },
+    "repository": {
+      "credentials": {
+        "accessKeyId": "DOCUMENT_REPOSITORY_CREDENTIALS_ACCESS_KEY_ID",
+        "secretAccessKey": "DOCUMENT_REPOSITORY_CREDENTIALS_SECRET_ACCESS_KEY"
+      },
+      "endpoint": "DOCUMENT_REPOSITORY_ENDPOINT",
+      "region": "DOCUMENT_REPOSITORY_REGION",
+      "bucket": "DOCUMENT_REPOSITORY_BUCKET"
+    }
+  }
+}

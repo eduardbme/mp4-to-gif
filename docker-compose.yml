@@ -5,8 +5,33 @@ services:
     image: bitnami/minio:2024
     container_name: minio
     network_mode: host
+    restart: always
     environment:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: admin-password
     volumes:
       - .mp4-to-gif/minio/data:/data
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    network_mode: host
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - .mp4-to-gif/redis/data:/data
+
+  mp4-to-gif-api:
+    build:
+      dockerfile: ./Dockerfile-api
+    container_name: mp4-to-gif-api
+    network_mode: host
+    restart: always
+    environment:
+      - DOCUMENT_CONCURRENCY=5
+      - DOCUMENT_REPOSITORY_CREDENTIALS_ACCESS_KEY_ID=admin
+      - DOCUMENT_REPOSITORY_CREDENTIALS_SECRET_ACCESS_KEY=admin-password
+      - DOCUMENT_REPOSITORY_ENDPOINT=http://localhost:9000
+      - DOCUMENT_REPOSITORY_REGION=localhost
+      - DOCUMENT_REPOSITORY_BUCKET=documents

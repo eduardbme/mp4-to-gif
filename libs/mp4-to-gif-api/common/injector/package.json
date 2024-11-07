@@ -1,0 +1,11 @@
+{
+  "name": "@mp4-to-gif-api/injector",
+  "version": "0.0.1",
+  "dependencies": {
+    "injection-js": "2.4.0",
+    "reflect-metadata": "0.2.2"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "private": true
+}
