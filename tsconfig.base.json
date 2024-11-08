@@ -36,7 +36,13 @@
       ],
       "@mp4-to-gif/common/domain": ["libs/common/domain/src/index.ts"],
       "@mp4-to-gif/common/util": ["libs/common/util/src/index.ts"],
-      "@mp4-to-gif/common/validate": ["libs/common/validate/src/index.ts"]
+      "@mp4-to-gif/common/validate": ["libs/common/validate/src/index.ts"],
+      "@mp4-to-gif/document/data-access": [
+        "libs/mp4-to-gif/document/data-access/src/index.ts"
+      ],
+      "@mp4-to-gif/document/domain": [
+        "libs/mp4-to-gif/document/domain/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
