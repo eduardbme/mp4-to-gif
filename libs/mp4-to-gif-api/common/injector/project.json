@@ -1,5 +1,5 @@
 {
-  "name": "@mp4-to-gif-api/injector",
+  "name": "@mp4-to-gif-api/common/injector",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mp4-to-gif-api/common/injector/src",
   "projectType": "library",

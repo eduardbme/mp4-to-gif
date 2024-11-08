@@ -1,8 +1,13 @@
 {
-  "name": "@mp4-to-gif/logger",
+  "name": "@mp4-to-gif-api/common/logger",
   "version": "0.0.1",
   "dependencies": {
-    "pino": "9.5.0"
+    "@common/validate": "file:../../../common/validate",
+    "@mp4-to-gif-api/common/context": "file:../context",
+    "@mp4-to-gif-api/common/injector": "file:../injector",
+    "pino": "9.5.0",
+    "rxjs": "~7.8.0",
+    "uuid": "11.0.2"
   },
   "type": "commonjs",
   "main": "./index.cjs",

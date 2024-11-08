@@ -28,6 +28,7 @@ export class LoggerContext {
     cb: (logger: LoggerWithContext) => void
   ) {
     LoggerContext.asyncLocalStorage.run(logger, () => {
+      // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
       cb(LoggerContext.asyncLocalStorage.getStore()!);
     });
   }

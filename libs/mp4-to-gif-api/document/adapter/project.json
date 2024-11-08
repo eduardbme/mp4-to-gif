@@ -1,5 +1,5 @@
 {
-  "name": "adapter",
+  "name": "@mp4-to-gif-api/document/adapter",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mp4-to-gif-api/document/adapter/src",
   "projectType": "library",

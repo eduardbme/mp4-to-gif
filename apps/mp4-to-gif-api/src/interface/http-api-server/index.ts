@@ -8,12 +8,19 @@ import { Queue } from 'bullmq';
 import express from 'express';
 import cors from 'cors';
 import serverDestroy from 'server-destroy';
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
 import { HttpApiServerError } from './error';
 import { healthcheck, v1 } from './route';
 import { LoggerWithContext } from '@mp4-to-gif-api/common/logger';
 import { loggerContext, requestContext } from './middleware';
+
+enum STATUS {
+  STOPPED,
+  STOPPING,
+  STARTING,
+  STARTED,
+}
 
 @Injectable()
 export class HttpApiServer extends EventEmitter {
@@ -22,7 +29,7 @@ export class HttpApiServer extends EventEmitter {
   );
 
   private readonly timeoutMs = 5000;
-  private status: HttpApiServer.STATUS = HttpApiServer.STATUS.STOPPED;
+  private status: STATUS = STATUS.STOPPED;
   private config!: Config;
   private logger!: LoggerWithContext;
   private app!: express.Application;
@@ -70,11 +77,11 @@ export class HttpApiServer extends EventEmitter {
 
   start(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-      if (this.status !== HttpApiServer.STATUS.STOPPED) {
+      if (this.status !== STATUS.STOPPED) {
         throw new HttpApiServerError('status !== HttpApiServer.STATUS.STOPPED');
       }
 
-      this.status = HttpApiServer.STATUS.STARTING;
+      this.status = STATUS.STARTING;
 
       this.server.on('error', (error) => {
         reject(error);
@@ -100,7 +107,7 @@ export class HttpApiServer extends EventEmitter {
 
           this.server.on('error', this.onServerError);
 
-          this.status = HttpApiServer.STATUS.STARTED;
+          this.status = STATUS.STARTED;
 
           resolve();
         }
@@ -110,11 +117,11 @@ export class HttpApiServer extends EventEmitter {
 
   stop(): Promise<void> {
     return new Promise((resolve, reject) => {
-      if (this.status !== HttpApiServer.STATUS.STARTED) {
+      if (this.status !== STATUS.STARTED) {
         return;
       }
 
-      this.status = HttpApiServer.STATUS.STOPPING;
+      this.status = STATUS.STOPPING;
 
       const timeoutTimer = setTimeout(() => {
         reject(new HttpApiServerError('Stop timeout'));
@@ -129,7 +136,7 @@ export class HttpApiServer extends EventEmitter {
           return reject(error);
         }
 
-        this.status = HttpApiServer.STATUS.STOPPED;
+        this.status = STATUS.STOPPED;
 
         return resolve();
       });
@@ -146,7 +153,7 @@ export class HttpApiServer extends EventEmitter {
 
   private readonly errorHandler = (
     error: Error,
-    _req: express.Request,
+    req: express.Request,
     res: express.Response,
     _next: express.NextFunction
   ) => {
@@ -191,15 +198,6 @@ export class HttpApiServer extends EventEmitter {
       },
       additionalProperties: false,
     };
-  }
-}
-
-export namespace HttpApiServer {
-  export enum STATUS {
-    STOPPED,
-    STOPPING,
-    STARTING,
-    STARTED,
   }
 }
 

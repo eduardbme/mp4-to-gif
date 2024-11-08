@@ -1,8 +1,8 @@
 import { hrtime } from 'process';
 import { v4 as uuid } from 'uuid';
+import { Validate } from '@common/validate';
 import { RequestContext } from '@mp4-to-gif-api/common/context';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
-import { Validate } from '@mp4-to-gif/common/validate';
 import { Context, Params } from './interface';
 import { ConsoleLoggerTransport, LoggerTransport } from './transport';
 

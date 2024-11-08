@@ -1,5 +1,5 @@
 {
-  "name": "domain",
+  "name": "@mp4-to-gif-api/document/domain",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mp4-to-gif-api/document/domain/src",
   "projectType": "library",

@@ -8,6 +8,8 @@ import {
   DocumentOutCreate1Cmd,
   DocumentOutCreate2Cmd,
   DocumentOutEntity,
+  DocumentOutMimetype,
+  DocumentOutReadableStream,
   DocumentUseCase,
 } from '@mp4-to-gif-api/document/domain';
 import { S3DocumentRepository } from '../outbound';
@@ -49,8 +51,8 @@ export class DocumentService implements DocumentUseCase {
 
     return this.documentRepository.documentOutCreate(
       new DocumentOutCreate2Cmd({
-        documentMimetype: 'image/gif',
-        documentStream: stream,
+        documentMimetype: 'image/gif' as DocumentOutMimetype,
+        documentStream: stream as DocumentOutReadableStream,
       })
     );
   }

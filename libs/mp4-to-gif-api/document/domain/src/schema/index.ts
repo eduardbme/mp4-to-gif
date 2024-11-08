@@ -1,4 +1,5 @@
+export { documentInMimetype } from './documentInMimetype';
 export { documentKey } from './documentKey';
-export { documentMimetype } from './documentMimetype';
+export { documentOutMimetype } from './documentOutMimetype';
 export { documentSignedUrl } from './documentSignedUrl';
 export { documentStream } from './documentStream';

@@ -3,6 +3,7 @@ import { LoggerContext } from '@mp4-to-gif-api/common/logger';
 import { injector } from '@mp4-to-gif-api/common/injector';
 import { DocumentQueueApplication } from '@mp4-to-gif-api/document/adapter';
 import {
+  DocumentKey,
   DocumentOutCreateRequestDTO,
   DocumentQueueTimeoutError,
 } from '@mp4-to-gif-api/document/domain';
@@ -22,7 +23,7 @@ export function documents() {
       try {
         const documentOutResponseDTO =
           await documentQueueApplication.documentOutCreate(
-            new DocumentOutCreateRequestDTO({ documentKey: req.file.path })
+            new DocumentOutCreateRequestDTO({ documentKey: req.file.path as DocumentKey })
           );
 
         return res

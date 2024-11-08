@@ -1,5 +1,5 @@
 {
-  "name": "logger",
+  "name": "@mp4-to-gif-api/common/logger",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mp4-to-gif-api/common/logger/src",
   "projectType": "library",

@@ -8,6 +8,7 @@ RUN npm i
 
 COPY apps apps
 COPY libs libs
+COPY types types
 COPY nx.json .
 COPY tsconfig.base.json .
 COPY eslint.config.js .

@@ -1,4 +1,6 @@
+export { DocumentInMimetype } from './DocumentInMimetype';
+export { DocumentInReadableStream } from './DocumentInReadableStream';
 export { DocumentKey } from './DocumentKey';
-export { DocumentMimetype } from './DocumentMimetype';
-export { DocumentReadableStream } from './DocumentReadableStream';
+export { DocumentOutMimetype } from './DocumentOutMimetype';
+export { DocumentOutReadableStream } from './DocumentOutReadableStream';
 export { DocumentSignedUrl } from './DocumentSignedUrl';

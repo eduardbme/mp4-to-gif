@@ -1,6 +1,6 @@
-import { Validate } from '@mp4-to-gif/common/validate';
-import { DocumentMimetype, DocumentReadableStream } from '../interface';
-import { documentMimetype, documentStream } from '../schema';
+import { Validate } from '@common/validate';
+import { DocumentInMimetype, DocumentInReadableStream } from '../interface';
+import { documentInMimetype, documentStream } from '../schema';
 
 export class DocumentInCreateCmd {
   private static validation = Validate.compile(
@@ -17,13 +17,13 @@ export class DocumentInCreateCmd {
       required: ['documentStream', 'documentMimetype'],
       properties: {
         documentStream,
-        documentMimetype,
+        documentMimetype: documentInMimetype,
       },
     };
   }
 }
 
 interface DocumentInCreateCmdRaw {
-  documentStream: DocumentReadableStream;
-  documentMimetype: DocumentMimetype;
+  documentStream: DocumentInReadableStream;
+  documentMimetype: DocumentInMimetype;
 }

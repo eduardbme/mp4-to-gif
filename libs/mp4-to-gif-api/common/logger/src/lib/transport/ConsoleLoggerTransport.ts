@@ -1,5 +1,5 @@
 import pino from 'pino';
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import { Context, Params } from '../interface';
 import { LoggerTransport } from './LoggerTransport';
 
@@ -22,7 +22,7 @@ export class ConsoleLoggerTransport extends LoggerTransport {
       base: void 0,
       timestamp: pino.stdTimeFunctions.isoTime,
       formatters: {
-        level: (label: string, _number: number) => {
+        level: (label: string) => {
           return { level: label };
         },
       },

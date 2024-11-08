@@ -1,7 +1,8 @@
 {
-  "name": "@mp4-to-gif/validate",
+  "name": "@common/validate",
   "version": "0.0.1",
   "dependencies": {
+    "@common/domain": "file:../domain",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
     "ajv-keywords": "5.1.0",

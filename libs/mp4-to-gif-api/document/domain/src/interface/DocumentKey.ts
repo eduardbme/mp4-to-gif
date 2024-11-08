@@ -1,1 +1,1 @@
-export type DocumentKey = string;
+export type DocumentKey = Branded<string, "DocumentKey">;

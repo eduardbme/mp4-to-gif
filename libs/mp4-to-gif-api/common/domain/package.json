@@ -1,5 +1,5 @@
 {
-  "name": "@mp4-to-gif-api/domain",
+  "name": "@mp4-to-gif-api/common/domain",
   "version": "0.0.1",
   "dependencies": {},
   "type": "commonjs",

@@ -1,7 +1,10 @@
 {
-  "name": "@mp4-to-gif/domain",
+  "name": "@mp4-to-gif-api/document/domain",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "@common/domain": "file:../../../common/domain",
+    "@common/validate": "file:../../../common/validate"
+  },
   "type": "commonjs",
   "main": "./index.cjs",
   "private": true

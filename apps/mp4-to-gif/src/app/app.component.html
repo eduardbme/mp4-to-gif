@@ -1,1 +1,8 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div><video controls src="/sample1-10s.mp4"></video></div>
+<div>
+  <p>RPS: {{ rps$ | async | number }}</p>
+  <p>Successed: {{ documentSuccessed$ | async | number }}</p>
+  <p>Errored: {{ documentErrored$ | async | number }}</p>
+  <button (click)="onStart(); (false)">Start</button>
+  <button (click)="onStop(); (false)">Stop</button>
+</div>

@@ -35,3 +35,10 @@ services:
       - DOCUMENT_REPOSITORY_ENDPOINT=http://localhost:9000
       - DOCUMENT_REPOSITORY_REGION=localhost
       - DOCUMENT_REPOSITORY_BUCKET=documents
+
+  mp4-to-gif:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: mp4-to-gif
+    network_mode: host
+    restart: always

@@ -1,5 +1,5 @@
 {
-  "name": "@mp4-to-gif-api/injector",
+  "name": "@mp4-to-gif-api/common/injector",
   "version": "0.0.1",
   "dependencies": {
     "injection-js": "2.4.0",

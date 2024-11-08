@@ -1,6 +1,7 @@
 import {
   DocumentInCreateCmd,
   DocumentInEntity,
+  DocumentOutCreate2Cmd,
   DocumentSignedUrlGetCmd,
   DocumentSignedUrlVO,
 } from '../../';
@@ -10,7 +11,7 @@ export interface DocumentRepository {
     documentInCreateCmd: DocumentInCreateCmd
   ): Promise<DocumentInEntity>;
   documentOutCreate(
-    documentInCreateCmd: DocumentInCreateCmd
+    documentOutCreateCmd: DocumentOutCreate2Cmd
   ): Promise<DocumentInEntity>;
   documentSignedUrlGet(
     documentSignedUrlGetCmd: DocumentSignedUrlGetCmd

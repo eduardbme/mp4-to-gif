@@ -1,7 +1,7 @@
 import {
   DocumentOutCreateRequestDTO,
   DocumentOutCreateResponseDTO,
-} from '@mp4-to-gif-api/document/domain';
+} from '../../dto';
 
 export interface DocumentQueueUseCase {
   documentOutCreate(

@@ -14,8 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "typeRoots": ["node_modules/@types", "types"],
+    "types": ["@branded"],
     "paths": {
-      "@mp4-to-gif-api": ["apps/mp4-to-gif-api"],
+      "@common/domain": ["libs/common/domain/src/index.ts"],
+      "@common/util": ["libs/common/util/src/index.ts"],
+      "@common/validate": ["libs/common/validate/src/index.ts"],
       "@mp4-to-gif-api/common/context": [
         "libs/mp4-to-gif-api/common/context/src/index.ts"
       ],
@@ -34,9 +38,16 @@
       "@mp4-to-gif-api/document/domain": [
         "libs/mp4-to-gif-api/document/domain/src/index.ts"
       ],
-      "@mp4-to-gif/common/domain": ["libs/common/domain/src/index.ts"],
-      "@mp4-to-gif/common/util": ["libs/common/util/src/index.ts"],
-      "@mp4-to-gif/common/validate": ["libs/common/validate/src/index.ts"]
+      "@mp4-to-gif/api/data-access": [
+        "libs/mp4-to-gif/api/data-access/src/index.ts"
+      ],
+      "@mp4-to-gif/api/domain": ["libs/mp4-to-gif/api/domain/src/index.ts"],
+      "@mp4-to-gif/document/data-access": [
+        "libs/mp4-to-gif/document/data-access/src/index.ts"
+      ],
+      "@mp4-to-gif/document/domain": [
+        "libs/mp4-to-gif/document/domain/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

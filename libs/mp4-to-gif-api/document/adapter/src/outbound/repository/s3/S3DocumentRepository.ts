@@ -7,12 +7,14 @@ import {
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { Validate } from '@mp4-to-gif/common/validate';
-import { exceptionToNull } from '@mp4-to-gif/common/util';
+import { Validate } from '@common/validate';
+import { exceptionToNull } from '@common/util';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
 import {
   DocumentInCreateCmd,
   DocumentInEntity,
+  DocumentKey,
+  DocumentOutCreate2Cmd,
   DocumentOutEntity,
   DocumentRepository,
   DocumentSignedUrlGetCmd,
@@ -72,14 +74,14 @@ export class S3DocumentRepository implements DocumentRepository {
     return new DocumentInEntity({
       documentKey: [this.config.bucket, documentKey].join(
         S3DocumentRepository.DELIMITER
-      ),
+      ) as DocumentKey,
     });
   }
 
   async documentOutCreate(
-    documentInCreateCmd: DocumentInCreateCmd
+    documentOutCreateCmd: DocumentOutCreate2Cmd
   ): Promise<DocumentInEntity> {
-    const { documentMimetype, documentStream } = documentInCreateCmd.value;
+    const { documentMimetype, documentStream } = documentOutCreateCmd.value;
 
     const documentKey = ['out', uuid()].join(S3DocumentRepository.DELIMITER);
 
@@ -96,7 +98,7 @@ export class S3DocumentRepository implements DocumentRepository {
     return new DocumentOutEntity({
       documentKey: [this.config.bucket, documentKey].join(
         S3DocumentRepository.DELIMITER
-      ),
+      ) as DocumentKey,
     });
   }
 

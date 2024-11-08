@@ -1,7 +1,7 @@
 import { Job, Queue, QueueEvents, Worker } from 'bullmq';
 import { v4 as uuid } from 'uuid';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import {
   DocumentOutCreate1Cmd,
   DocumentOutCreateRequestDTO,

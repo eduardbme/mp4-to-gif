@@ -1,5 +1,5 @@
 {
-  "name": "@mp4-to-gif-api/context",
+  "name": "@mp4-to-gif-api/common/context",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mp4-to-gif-api/common/context/src",
   "projectType": "library",
