@@ -1,4 +1,4 @@
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import { DocumentOutEntity } from '../entity';
 
 export class DocumentOutCreateResponseDTO {

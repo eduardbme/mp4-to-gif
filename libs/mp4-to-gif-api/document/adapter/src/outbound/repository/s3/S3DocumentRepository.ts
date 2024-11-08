@@ -7,8 +7,8 @@ import {
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { Validate } from '@mp4-to-gif/common/validate';
-import { exceptionToNull } from '@mp4-to-gif/common/util';
+import { Validate } from '@common/validate';
+import { exceptionToNull } from '@common/util';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
 import {
   DocumentInCreateCmd,

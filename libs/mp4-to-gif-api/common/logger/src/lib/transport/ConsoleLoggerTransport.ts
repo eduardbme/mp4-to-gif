@@ -1,5 +1,5 @@
 import pino from 'pino';
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import { Context, Params } from '../interface';
 import { LoggerTransport } from './LoggerTransport';
 

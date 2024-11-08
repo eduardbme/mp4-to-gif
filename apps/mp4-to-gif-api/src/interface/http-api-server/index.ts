@@ -8,7 +8,7 @@ import { Queue } from 'bullmq';
 import express from 'express';
 import cors from 'cors';
 import serverDestroy from 'server-destroy';
-import { Validate } from '@mp4-to-gif/common/validate';
+import { Validate } from '@common/validate';
 import { Injectable } from '@mp4-to-gif-api/common/injector';
 import { HttpApiServerError } from './error';
 import { healthcheck, v1 } from './route';
